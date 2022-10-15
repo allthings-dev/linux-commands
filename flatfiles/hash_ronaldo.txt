@@ -1,5 +1,0 @@
-Tournament#Matchday#Date#Venue#Club#Opponent#Result#Position#Minute#When Scored#Goal Type#Assist
-Liga Portugal #6#10/7/02#Home#Sporting CP#Moreirense FC#3:0#LW#34'#2:0#Solo run#Not Applicable
-Liga Portugal #6#10/7/02#Home#Sporting CP#Moreirense FC#3:0#LW#90'+5#3:0#Header#Rui Jorge
-Liga Portugal #8#10/26/02#Away#Sporting CP#Boavista FC#1:2#Not Applicable#88'#1:2#Right-footed shot#Carlos Martins
-Taça de Portugal #Fourth Round#11/24/02#Home#Sporting CP#CD Estarreja#4:1#Not Applicable#67'#3:0#Left-footed shot#César Prates
