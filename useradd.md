@@ -45,3 +45,9 @@
 #### Add secondary groups to user with teh command
 * sudo useradd -g users -G wheel, developers username
 
+#### List all users
+* cat /etc/passwd | cut -d: -f1
+
+### List all groups
+* cat /etc/group
+
