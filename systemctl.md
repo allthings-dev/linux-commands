@@ -6,6 +6,7 @@
 
 #### References:
 * https://documentation.suse.com/smart/systems-management/html/systemd-basics/index.html
+* https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files
 
 ## Commands
 
