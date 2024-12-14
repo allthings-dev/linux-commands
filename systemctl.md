@@ -4,6 +4,8 @@
 
 #### systemctl has to run with root or with sudo privilege
 
+#### References:
+* https://documentation.suse.com/smart/systems-management/html/systemd-basics/index.html
 
 ## Commands
 
