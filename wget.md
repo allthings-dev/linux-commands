@@ -79,10 +79,18 @@ $ wget --no-check-certificate https://domain-with-invalid-ss.com
 $ wget --user user --password pass http://example.com/
 ```
 ### Use proxy
-* The proxy server is set at system level (check teh proxy.md file)
+* The proxy server is set at system level (check the proxy.md file)
 ```
 wget --proxy-user=USER --proxy-password=PASS https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.17.2.tar.xz
 ```
+
+### Tun off proxy
+* The proxy is set at set at system level using bashrc file or env variables on command line
+* This i=can be turned off using --no-proxy option
+```
+wget --no-proxy  https://www.google.com
+```
+
 ### To view default http headers
 * Use teh option -d
 ```
