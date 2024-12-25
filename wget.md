@@ -1,8 +1,10 @@
 # wget command
 
 ## Overview
+* Reference: https://gist.github.com/Dammmien/4af98e05f9c51c2da007cc70d62bf562
 * Wget is a command-line utility for downloading files from the web
 * With Wget, you can download files using HTTP, HTTPS, and FTP protocols
+* wget follows upto 20 redirects by dafault
 * Wget provides a number of options allowing you to:
   * download multiple files
   * resume downloads
@@ -81,8 +83,45 @@ $ wget --user user --password pass http://example.com/
 ```
 wget --proxy-user=USER --proxy-password=PASS https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.17.2.tar.xz
 ```
+### To view default http headers
+* Use teh option -d
+```
+$ wget -d http://www.google.com/
 
+GET / HTTP/1.0
+User-Agent: Wget/1.12 (linux-gnu)
+Accept: */*
+Host: www.google.com
+Connection: Keep-Alive
+```
 
+### Set http headers
+```
+$ wget -d --header="User-Agent: Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11" --header="Referer: http://xmodulo.com/" --header="Accept-Encoding: compress, gzip" http://www.google.com/
+```
+
+### Hit a url with json as input
+* When json is provided as a string on command line
+* Note that -O is for output and the dash(-) after it means that put output on standard output itself
+```
+$ wget -O - --post-data='{"some data to post..."}' --header='Content-Type:application/json' 'http://www.example.com:9000/json'
+```
+* When json is in an input file
+```
+wget -q -O - --header="Content-Type:application/json" --post-file=foo.json http://127.0.0.1
+```
+
+### Verfiy server cert
+* FILE iw file with the bundle of CA's.
+```
+wget --ca-certificate=FILE http://www.google.com/
+```
+
+### Provide cleint cert
+* FILE is client certificate file
+```
+wget --certificate=FILE http://www.google.com/  
+```
 
 
 
