@@ -131,5 +131,8 @@ wget --ca-certificate=FILE http://www.google.com/
 wget --certificate=FILE http://www.google.com/  
 ```
 
-
+### Sepcify http method PUT, POST etc
+```
+wget --method=PUT --body-data=<STRING>
+```
 
