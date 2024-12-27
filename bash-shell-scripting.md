@@ -88,6 +88,21 @@ if [[ $string =~ " str" ]]; then
 fi
 ```
 
+# Split a string and iterate over elements
+* This uses IFS which is Internal Field Separator
+```
+#/bin/bash
+
+IFS=':'
+arr=($PATH)
+unset IFS
+
+for dirx in ${arr[@]}; do
+	echo $dirx
+done
+
+```
+
 ## Numerical operations
 * There are 2 syntax for this. One uses brackets and anotehr uses teh legacy utility "expr"
 * Type 1. Note that theer should be no spaces in between dollar and the brackets. Spaces in actual experssion is fine
