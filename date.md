@@ -34,7 +34,12 @@ $ date "+%Y-%m-%d %H:%m:%S.%N"
 $ date -u "+%Y-%m-%d %H:%m:%S.%N"
 2024-12-25 05:12:00.998186800
 ```
-
+### Print seconds since epoch
+* Note that the seconds currently are around 1.7 billion (i.e. 10 digits)
+```
+$ date +%s
+1735271299
+```
 
 
 
