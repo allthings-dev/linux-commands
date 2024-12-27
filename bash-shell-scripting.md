@@ -362,7 +362,28 @@ function_name(){
 * The functions that terminate the shell entirely using the ‘exit’ keyword.
 
 
+## Progress Bar in shell
+* Over-writing of curernt is done by using the "\r" char
+* To run it, source teh file and then execute "progress-bar 100"
+```
+progress-bar() {
+  local duration=${1}
 
+
+    already_done() { for ((done=0; done<$elapsed; done++)); do printf "▇"; done }
+    remaining() { for ((remain=$elapsed; remain<$duration; remain++)); do printf " "; done }
+    percentage() { printf "| %s%%" $(( (($elapsed)*100)/($duration)*100/100 )); }
+    clean_line() { printf "\r"; }
+
+  for (( elapsed=1; elapsed<=$duration; elapsed++ )); do
+      already_done; remaining; percentage
+      sleep 1
+      clean_line
+  done
+  clean_line
+}
+
+```
 
 
 
