@@ -101,6 +101,10 @@ c=`expr 2 + 6`
 ```
 my_data=(Learning "Bash variables" from GFG)
 arr=("value1" value2 $value3)
+arr2([0]="Baeldung" [1]="is" [2]="cool")
+arr3[0]="Baeldung"
+arr3[1]="is"
+arr3[2]="cool"
 
 
 echo $my_data
@@ -114,7 +118,14 @@ echo elem2 length is ${#my_data[1]}
 ```
 
 ## Map or Associative Array
-* 
+* To create map, the "declare" keyword hs to be sued. Note that "declare" can also be be used for normal numeric, string, arrays variabels aslo, but is usuallu omitted
+```
+declare -A map1=(["one"]="bash" ["two"]="is" ["three"]="cool")
+echo values are ${map1[@]}
+echo keys are ${!map1[@]}
+echo map length is ${#map1[@]}
+for key in ${!map1[@]}; do echo $key:${map1[$key]}; done
+```
 
 ## Read user input
 * The command for this is "read"
