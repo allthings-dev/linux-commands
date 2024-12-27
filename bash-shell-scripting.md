@@ -71,6 +71,22 @@ echo ${car:1} // this prints ercedes
 
 echo ${car:0:2} // this prints me
 ```
+* To cehck if a string has a substring, you can use either == or =~.
+* In case of ==, space in teh subsctring has to be enclosed in bracket
+```
+string='My long string'
+if [[ $string == *"My long"* ]]; then
+  echo "It's there!"
+fi
+```
+* Alternatively, use =~ like below
+```
+string='My string';
+
+if [[ $string =~ " str" ]]; then
+   echo "It's there!"
+fi
+```
 
 ## Numerical operations
 * There are 2 syntax for this. One uses brackets and anotehr uses teh legacy utility "expr"
@@ -181,6 +197,14 @@ then
     echo "a is not equal to b"
 fi 
 ```
+* Check if a variable is unset or set to empty variab;e
+```
+if [ -z "${VAR}" ];
+```
+* Check if a variable has non-null/non-zero string value
+```
+if [ -n "$1" ]
+```
 
 ## Looping - while
 * Example 1
@@ -225,7 +249,7 @@ do
     echo “Iteration no $a”
 done
 ```
-* Example 3: This will print red, greena nd blue in 3 separate lines
+* Example 3: This will print red, green and blue in 3 separate lines
 ```
 COLORS=”red green blue”
 
@@ -236,7 +260,30 @@ do
     echo “COLOR: $COLOR”
 done
 ```
-
+* Example 4: using start, end and increment
+```
+for i in {0..10..2}
+do
+  echo "Welcome $i times"
+done
+```
+* Example 5: 3-parameter loop
+```
+for (( c=1; c<=5; c++ ))
+do 
+   echo "Welcome $c times"
+done
+```
+* Example 6: loop over command output
+```
+for OUTPUT in $(Linux-Or-Unix-Command-Here)
+do
+    command1 on $OUTPUT
+    command2 on $OUTPUT
+    commandN
+done
+```
+  
 ## Debugging
 * set the set -x option at the beginning of the script
 * This option enables debugging mode, which causes Bash to print each command that it executes to the terminal, preceded by a + sign
